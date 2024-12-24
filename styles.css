@@ -1,0 +1,343 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #000;
+    color: #0f0;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #0f0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.1);
+    background: rgba(0, 0, 0, 0.8);
+    position: relative;
+    z-index: 1;
+}
+
+.login-container h2 {
+    text-align: center;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-container label {
+    margin-bottom: 5px;
+}
+
+.login-container input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #0f0;
+    border-radius: 5px;
+    background: #000;
+    color: #0f0;
+}
+
+.login-container button {
+    padding: 10px;
+    background-color: #0f0;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.login-container button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+#logoutButton {
+    background: none;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#logoutButton:hover {
+    background-color: #0f0;
+    color: #000;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sidebar {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    width: 250px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 1rem;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+main {
+    flex: 1;
+    padding: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.card {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #0f0;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    width: 30%;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+.card a {
+    color: #0f0;
+    text-decoration: none;
+}
+
+.card a:hover {
+    color: #fff;
+}
+
+.bottom-nav {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.bottom-nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer {
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+footer .social-icons a {
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.3s, color 0.3s;
+}
+
+footer .social-icons a:hover {
+    transform: scale(1.2);
+    color: #0f0;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
+
+/* Hack background animation */
+@keyframes hack {
+    0% {
+        opacity: 0.1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0.1;
+    }
+}
+
+.hack-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 255, 0, 0.1),
+        rgba(0, 255, 0, 0.1) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    animation: hack 1s infinite;
+    z-index: 0;
+}
+
+/* Additional animations for dashboard */
+@keyframes text-flicker {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+main h2, main p {
+    animation: text-flicker 2s infinite;
+}
+
+.video-container {
+    margin: 20px 0;
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.social-icons a i {
+    font-size: 1.3rem;
+}
+
+.timer-container, .result-container {
+    text-align: center;
+    margin: 20px 0;
+    border: 1px solid #0f0;
+    border-radius: 5px;
+    padding: 20px;
+    animation: fade 4s infinite;
+    transition: all 0.3s ease;
+}
+
+@keyframes fade {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+#timer {
+    font-size: 2rem;
+    margin-top: 10px;
+}
+
+#period-number {
+    font-size: 2rem;
+    margin-top: 10px;
+}
+
+.result.output {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    border: #0f0 1px solid;
+    padding: 10px;
+}
+
+#generateButton {
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+    background-color: #0f0;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#generateButton:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.result.output.green {
+    color: #0f0;
+}
+
+.result.output.red {
+    color: #f00;
+}
+
+.error-message {
+    color: #f00;
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
